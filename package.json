@@ -1,0 +1,19 @@
+{
+  "name": "poo-bot",
+  "version": "1.0.0",
+  "description": "discord bot that can do what ever the fuck it wants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "poo-bot"
+  ],
+  "author": "sylix",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
