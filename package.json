@@ -14,6 +14,7 @@
   "author": "sylix",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "xmlhttprequest": "^1.8.0"
   }
 }

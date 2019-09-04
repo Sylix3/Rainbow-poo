@@ -10,7 +10,7 @@ var prefix = "p!"
 bot.on('ready', () => {
     console.log(`logged in ${bot.user.tag}`)
 
-    bot.user.setActivity("Taking a poo", {type: "PLAYING"})
+    bot.user.setActivity("Taking a poo", {type: "PLAYING" })
 });
 
 bot.on('guildMemberAdd', member => {
@@ -36,11 +36,11 @@ bot.on('message', msg => {
         }
 
         if (msg.channel.id === "607722287969599498"){
-            if (msg.content == prefix + 'members') {
+            if (msg.content == prefix + 'members' ) {
                 msg.reply("the amount of members = " + msg.guild.memberCount);
             }
 
-            if (msg.content == prefix + 'commands') {
+            if (msg.content == prefix + 'commands' ) {
                 msg.channel.send("__Commandlist:__ \n 1: **" + prefix + "members** : show's how many members that are in the server. \n 2: **" + prefix + "kick** : Kicks player from the server. \n 3: **" + prefix + "ban** : Bans player from the server. \n 4: **" + prefix + "purge** : Cleans Chat. \n 5: **" + prefix + "play** : Plays music in voice channel. \n 6: **" + prefix + "mute** : Mutes member from the server. \n 7: **" + prefix + "poo** : Just a random command! \n 8: **" + prefix + "donate** : A page where you can give a small donation :heart: ");
             }
 
@@ -62,8 +62,8 @@ bot.on('message', msg => {
     
 
 
-        if (msg.content.startsWith(prefix + 'kick')) {
-            if (!msg.member.hasPermission("KICK_MEMBERS")) return msg.send("You do not have permission to do this.");
+        if (msg.content.startsWith(prefix + 'kick' )) {
+            if (!msg.member.hasPermission("KICK_MEMBERS" )) return msg.send("You do not have permission to do this.");
 
                 let member = msg.mentions.members.first()
 
@@ -75,8 +75,8 @@ bot.on('message', msg => {
 
 
 
-        if (msg.content.startsWith(prefix + 'ban')) {
-            if (!msg.member.hasPermission("BAN_MEMBERS")) return msg.send("You do not have permission to do this.");
+        if (msg.content.startsWith(prefix + 'ban' )) {
+            if (!msg.member.hasPermission("BAN_MEMBERS" )) return msg.send("You do not have permission to do this.");
             
                 let member = msg.mentions.members.first()
 
@@ -86,8 +86,8 @@ bot.on('message', msg => {
         }
         
         
-        if (msg.content.startsWith(prefix + 'purge')) {
-                if(!msg.member.hasPermission("MANAGE_MESSAGES")) {
+        if (msg.content.startsWith(prefix + 'purge' )) {
+                if(!msg.member.hasPermission("MANAGE_MESSAGES" )) {
                     return msg.channel.send("You do not have persmission to do this!")
                 }
                 
@@ -101,13 +101,13 @@ bot.on('message', msg => {
         }
 
 
-        if (msg.content.startsWith(prefix + 'accept') && !msg.member.roles.find(r => r.id === '594955738623901726')) return msg.send("You do not have permission to do this.");
+        if (msg.content.startsWith( prefix + 'accept' ) && !msg.member.roles.find(r => r.id === '594955738623901726')) return msg.send("You do not have permission to do this.");
 
-        if (msg.content.startsWith( prefix + 'poo')) return msg.channel.send("Hello friend my name is rainbow poo im currently still under construction but i will do some very cool stuff in the future stay tuned to see my upcoming glory!");
+        if (msg.content.startsWith( prefix + 'poo' )) return msg.channel.send("Hello friend my name is rainbow poo im currently still under construction but i will do some very cool stuff in the future stay tuned to see my upcoming glory!");
 
-        if (msg.content.startsWith( prefix + 'donate')) return msg.channel.send("if you would like to give a small donation to the server you can do so by clicking this link : \n https://paypal.me/pools/c/8hk2gYh0ks");
+        if (msg.content.startsWith( prefix + 'donate' )) return msg.channel.send("if you would like to give a small donation to the server you can do so by clicking this link : \n https://paypal.me/pools/c/8hk2gYh0ks");
 
-        if (msg.content.startsWith( prefix + 'help')) return msg.channel.send("...");
+        if (msg.content.startsWith( prefix + 'help' )) return msg.channel.send("To get my command list type p!commands");
 
 
         
@@ -161,8 +161,10 @@ bot.on('message', msg => {
 
     }
 });
+ 
+ var secret = require('./key.js');
 
-bot.login("");
+bot.login(secret.key);
 
 function isInt(value) {
     return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
