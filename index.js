@@ -10,7 +10,7 @@ var prefix = "p!"
 bot.on('ready', () => {
     console.log(`logged in ${bot.user.tag}`)
 
-    bot.user.setActivity("Taking a poo", {type: "PLAYING" })
+    bot.user.setActivity("p!help", {type: "PLAYING" })
 });
 
 bot.on('guildMemberAdd', member => {
